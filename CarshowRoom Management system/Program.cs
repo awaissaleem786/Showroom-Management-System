@@ -28,8 +28,8 @@ class MainClass
     public static void Main(string[] args)
     {
         
-        Showroom[] showroom = new Showroom[5];
-        Employees[] empolyees = new Employees[5];
+        LinkedList<Showroom> showrooms=new LinkedList<Showroom>();
+        Employees[] empolyees = new Employees[5];  // Employee class ka object jo ha wo array type ka ha 
         Cars[] cars = new Cars[5];
         int indexshowroom = 0;
         int indexempoly = 0;
@@ -45,9 +45,9 @@ class MainClass
                 switch (choice)
                 {
                     case 1:
-                        showroom[indexshowroom] = new Showroom();
-                        showroom[indexshowroom].set_details();
-                        indexshowroom++;
+                         Showroom showroom = new Showroom();
+                             showroom.set_details();
+                              showrooms.AddLast(showroom);
                         Console.WriteLine("1].ADD NEW SHOWROOM");
                         Console.WriteLine("9].GO BACK TO MAIN MENU");
                         choice = int.Parse(Console.ReadLine());
